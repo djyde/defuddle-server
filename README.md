@@ -6,55 +6,40 @@ A Node.js API service that provides web content parsing capabilities using the [
 
 - Parse and extract content from web pages
 - Support for both URL fetching and direct HTML input
-- Optional image removal from parsed content
 - Configurable parsing options
 - API key authentication support
 
-## Development Setup
-
-### Prerequisites
-
-- Node.js 22+ 
-- pnpm (recommended) or npm
-
-### Installation
+## Build and run
 
 ```bash
-# Clone the repository
-git clone <repository-url>
-cd defuddle-api
-
-# Install dependencies
 pnpm install
-# or
-npm install
+npm run build
+npm start
 ```
 
-### Running in Development
+## Development
 
 ```bash
-# Start development server with hot reload
-pnpm dev
-# or
 npm run dev
 ```
 
 The server will start on `http://localhost:3000`
 
-### Environment Variables
+## Environment Variables
 
 - `PORT` - Server port (default: 3000)
 - `API_KEY` - Optional API key for authentication
+  - If set, the API key must be provided in the `x-api-key` header
 
-### Building for Production
+## API
 
-```bash
-pnpm build
-# or
-npm run build
+### POST /api/parse
 
-# Start production server
-pnpm start
-# or 
-npm start
-```
+#### Body
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `url` | string | No* | URL of the web page to parse. You must provide either `url` or `html` |
+| `html` | string | No* | Raw HTML content to parse. You must provide either `url` or `html` |
+| `removeImages` | boolean | No | Remove images from the HTML before parsing |
+| `defuddleOptions` | object | No | Additional options to pass to the Defuddle parser. See [Defuddle options](https://github.com/kepano/defuddle) |

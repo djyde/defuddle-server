@@ -39,7 +39,7 @@ The server will start on `http://localhost:3000`
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `url` | string | No* | URL of the web page to parse. You must provide either `url` or `html` |
-| `html` | string | No* | Raw HTML content to parse. You must provide either `url` or `html` |
+| `url` | string | Yes | URL of the web page to parse |
+| `html` | string | No | Raw HTML content to parse. If provided, will fetch the HTML from the URL and parse it |
 | `removeImages` | boolean | No | Remove images from the HTML before parsing |
 | `defuddleOptions` | object | No | Additional options to pass to the Defuddle parser. See [Defuddle options](https://github.com/kepano/defuddle) |

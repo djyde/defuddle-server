@@ -1,6 +1,6 @@
 # Defuddle API
 
-A Node.js API service that provides web content parsing capabilities using the [Defuddle](https://github.com/lutaonan/defuddle) library. Built with [Hono](https://hono.dev/) framework.
+A Node.js API service that provides web content parsing capabilities using the [Defuddle](https://github.com/kepano/defuddle/) library. Built with [Hono](https://hono.dev/) framework.
 
 ## Features
 
